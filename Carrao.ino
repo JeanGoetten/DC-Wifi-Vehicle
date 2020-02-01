@@ -1,8 +1,6 @@
 #define BLYNK_PRINT Serial
 #define motorRight_1 D2
-#define motorRight_2 D6
 #define motorLeft_1 D5
-#define motorLeft_2 D8
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -32,8 +30,6 @@ void setup()
 
   pinMode(D2, OUTPUT);
   pinMode(D5, OUTPUT);
-  pinMode(D6, OUTPUT);
-  pinMode(D8, OUTPUT);
 
   speed_all = false;
   speed_left = false;
@@ -82,25 +78,18 @@ void loop()
   
   if(speed_all == true){
       digitalWrite(motorRight_1, HIGH);
-      digitalWrite(motorRight_2, HIGH);
-      
       digitalWrite(motorLeft_1, HIGH);
-      digitalWrite(motorLeft_2, HIGH);
 
       if(speed_left == true){
       digitalWrite(motorRight_1, LOW);
-      digitalWrite(motorRight_2, LOW);
     }
       if(speed_right == true){
       digitalWrite(motorLeft_1, LOW);
-      digitalWrite(motorLeft_2, LOW);
     }
   }
   else{
     digitalWrite(motorRight_1, LOW);
-    digitalWrite(motorRight_2, LOW);
     digitalWrite(motorLeft_1, LOW);
-    digitalWrite(motorLeft_2, LOW);
   }
     
  
