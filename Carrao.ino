@@ -1,6 +1,6 @@
 #define BLYNK_PRINT Serial
-#define motorRight_1 D2
-#define motorLeft_1 D5
+#define motorRight_1 02
+#define motorLeft_1 00
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -28,8 +28,8 @@ void setup()
   //Blynk.begin(auth, ssid, pass, "blynk-cloud.com", 80);
   //Blynk.begin(auth, ssid, pass, IPAddress(192,168,1,100), 8080);
 
-  pinMode(D2, OUTPUT);
-  pinMode(D5, OUTPUT);
+  pinMode(motorRight_1, OUTPUT);
+  pinMode(motorLeft_1, OUTPUT);
 
   speed_all = false;
   speed_left = false;
